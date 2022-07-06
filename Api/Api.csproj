@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<AssemblyName>SillyCompany.Finance.TestingForDevelopers.Api</AssemblyName>
+		<RootNamespace>SillyCompany.Finance.TestingForDevelopers.Api</RootNamespace>
+		<Nullable>Enable</Nullable>
+		<ImplicitUsings>Enable</ImplicitUsings>
+		<InvariantGlobalization>True</InvariantGlobalization>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Application\Application.csproj" />
+		<ProjectReference Include="..\Infrastructure.Databases\Infrastructure.Databases.csproj" />
+	</ItemGroup>
+
+</Project>

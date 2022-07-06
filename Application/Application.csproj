@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<AssemblyName>SillyCompany.Finance.TestingForDevelopers.Application</AssemblyName>
+		<RootNamespace>SillyCompany.Finance.TestingForDevelopers.Application</RootNamespace>
+		<Nullable>Enable</Nullable>
+		<ImplicitUsings>Enable</ImplicitUsings>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<InternalsVisibleTo Include="$(AssemblyName).UnitTests" />
+		<InternalsVisibleTo Include="$(AssemblyName).IntegrationTests" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Contracts\Contracts.csproj" />
+		<ProjectReference Include="..\Domain\Domain.csproj" />
+	</ItemGroup>
+
+</Project>

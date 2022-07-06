@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<AssemblyName>SillyCompany.Finance.TestingForDevelopers.Domain</AssemblyName>
+		<RootNamespace>SillyCompany.Finance.TestingForDevelopers.Domain</RootNamespace>
+		<Nullable>Enable</Nullable>
+		<ImplicitUsings>Enable</ImplicitUsings>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<InternalsVisibleTo Include="$(AssemblyName).UnitTests" />
+		<InternalsVisibleTo Include="SillyCompany.Finance.TestingForDevelopers.Testing.Common" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Architect.AmbientContexts" Version="1.1.1" />
+		<PackageReference Include="Architect.Identities" Version="1.0.2" />
+		<PackageReference Include="Architect.DomainModeling" Version="1.0.3" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+		<PackageReference Include="prometheus-net.AspNetCore" Version="6.0.0" />
+		<PackageReference Include="Scrutor" Version="4.1.0" />
+	</ItemGroup>
+
+</Project>
