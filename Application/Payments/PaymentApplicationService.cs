@@ -5,6 +5,9 @@ using SillyCompany.Finance.TestingForDevelopers.Domain.Payments;
 
 namespace SillyCompany.Finance.TestingForDevelopers.Application.Payments;
 
+/// <summary>
+/// Provides use cases related to payments.
+/// </summary>
 public class PaymentApplicationService : IPaymentClient, IApplicationService
 {
 	private ILogger<PaymentApplicationService> Logger { get; }
@@ -18,9 +21,12 @@ public class PaymentApplicationService : IPaymentClient, IApplicationService
 		this.PaymentRepo = paymentRepo;
 	}
 
+	/// <summary>
+	/// A use case that creates a payment based on the given input.
+	/// </summary>
 	public async Task CreatePayment(decimal amount, string description)
 	{
-		this.Logger.LogInformation("Creating payment of {amount}.", amount);
+		this.Logger.LogInformation("Creating payment of EUR {amount}.", amount);
 
 		var payment = new Payment(
 			new Amount(amount),

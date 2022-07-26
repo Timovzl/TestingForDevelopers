@@ -10,6 +10,10 @@ public class PaymentApplicationServiceTests : IntegrationTestBase
 		// Set up any ambient dependencies
 		// using var clockScope = new ClockScope(DateTime.UnixEpoch);
 
+		// Register any mocks, overwriting the original dependencies
+		//var mockLogger = new Mock<ILogger<PaymentApplicationService>>();
+		//this.ConfigureServices(services => services.AddSingleton(mockLogger.Object));
+
 		// Construct the request model (from contracts)
 		// var request = new CreatePaymentRequest(...);
 

@@ -13,6 +13,7 @@ public class PaymentTests
 		// Control ambient dependencies
 		using var clockScope = new ClockScope(() => DateTime.UnixEpoch);
 
+		// Call the constructor, but use a builder to avoid compiler errors on parameter changes
 		var result = new PaymentDummyBuilder()
 			.WithAmount(1.23m)
 			.WithDescription("Test")
@@ -43,6 +44,9 @@ public class PaymentTests
 	public void MarkAsExecuted_Regularly_ShouldHaveExpectedEffect()
 	{
 		var instance = new PaymentDummyBuilder().Build();
+
+		// Sanity check to ensure that we are actually making a change
+		Assert.NotEqual(DateTime.UnixEpoch, instance.ExecutionDateTime);
 
 		using var clockScope = new ClockScope(() => DateTime.UnixEpoch);
 
