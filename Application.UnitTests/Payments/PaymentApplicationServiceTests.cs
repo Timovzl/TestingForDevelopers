@@ -25,7 +25,7 @@ public class PaymentApplicationServiceTests
 	{
 		await this.Instance.CreatePayment(1.23m, "Test");
 
-		this.MockPaymentRepo.Verify(r => r.Add(It.IsAny<Payment>()), Times.Once);
+		this.MockPaymentRepo.Verify(repo => repo.Add(It.IsAny<Payment>()), Times.Once);
 	}
 
 	// NOTE: Worthwhile?
@@ -37,7 +37,7 @@ public class PaymentApplicationServiceTests
 
 		// Mocking ILogger<T> is a bit convoluted
 		this.MockLogger.Verify(
-			x => x.Log(
+			logger => logger.Log(
 				LogLevel.Information,
 				It.IsAny<EventId>(),
 				It.Is<It.IsAnyType>((state, _) => state.ToString()!.Contains("creat", StringComparison.OrdinalIgnoreCase)),
