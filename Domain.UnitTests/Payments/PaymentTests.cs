@@ -45,8 +45,8 @@ public class PaymentTests
 	{
 		var instance = new PaymentDummyBuilder().Build();
 
-		// Sanity check to ensure that we are actually making a change
-		Assert.NotEqual(DateTime.UnixEpoch, instance.ExecutionDateTime);
+		// Sanity check to confirm the expected starting state
+		Assert.Null(instance.ExecutionDateTime);
 
 		using var clockScope = new ClockScope(() => DateTime.UnixEpoch);
 
